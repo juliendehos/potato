@@ -5,7 +5,7 @@ all: potatomain
 potatomain: potatomain.cpp
 	g++ -Wall -o $@ -I../hs/csrc $< -lpotato -L$(MYPATH)
 
-run:
+run: potatomain
 	LD_LIBRARY_PATH=$(MYPATH) ./potatomain
 
 clean:
