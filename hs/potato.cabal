@@ -1,0 +1,22 @@
+cabal-version: 1.12
+name:           potato
+version:        0.1.0.0
+license:        BSD3
+build-type:     Simple
+
+foreign-library potato
+  type:                native-shared
+  other-modules:       Potato
+  build-depends:       base, lens, deepseq 
+  hs-source-dirs:      src
+  c-sources:           csrc/potato.cpp
+  default-language:    Haskell2010
+
+library
+  exposed-modules: Potato
+  other-modules: Paths_potato
+  hs-source-dirs: src
+  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints
+  build-depends: base, deepseq, lens
+  default-language: Haskell2010
+
